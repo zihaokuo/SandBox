@@ -1,0 +1,11 @@
+{
+    "files.associations": {
+        "unistd.h": "c",
+        "stdio.h": "c",
+        "limits.h": "c",
+        "dirent.h": "c",
+        "stat.h": "c",
+        "cstdlib": "cpp",
+        "typeinfo": "cpp"
+    }
+}
