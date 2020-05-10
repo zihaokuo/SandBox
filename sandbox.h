@@ -71,8 +71,6 @@ DIR *opendir(const char *name); */
 /* arg2
 FILE *fopen(const char *filename, const char *mode)
 FILE *fopen64(const char *filename, const char *mode)
-int open(const char *pathname, int flags);
-int open64(const char *pathname, int flags);
 int creat(const char *path, mode_t mode);
 int creat64(const char *path, mode_t mode);
 int mkdir(const char *   path, mode_t mode);
@@ -138,7 +136,9 @@ int link(const char *   path1, const char *path2); */
 int chown(const char *path, uid_t owner, gid_t group);
 ssize_t readlink(const char *path, char *buf, size_t bufsiz);
 int __xstat(int ver, const char * path, struct stat * stat_buf);
-int __xstat64(int ver, const char * path, struct stat64 * stat_buf); */
+int __xstat64(int ver, const char * path, struct stat64 * stat_buf);
+int open(const char *pathname, int flags, mode_t mode);
+int open64(const char *pathname, int flags, mode_t mode);*/
 //case2, mean we need to check a2 and we only need to check one parameter
 
 #define FUNC_ARG3(name, ret, CheckNum, arg1, a1, arg2, a2, arg3, a3) \

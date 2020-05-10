@@ -78,8 +78,6 @@ int link(const char *   path1, const char *path2); */
 
 FUNC_ARG2(fopen,FILE*,'F',1,const char*,filename,const char *,mode)
 FUNC_ARG2(fopen64,FILE*,'F',1,const char*,filename,const char *,mode)
-FUNC_ARG2(open,int,'i',1,const char*,pathname,int,flag)
-FUNC_ARG2(open64,int,'i',1,const char*,pathname,int,flag)
 FUNC_ARG2(create,int,'i',1,const char*,path,mode_t,mode)
 FUNC_ARG2(create64,int,'i',1,const char*,path,mode_t,mode)
 FUNC_ARG2(mkdir,int,'i',1,const char *,path,mode_t,mode)
@@ -92,7 +90,9 @@ FUNC_ARG2(link,int,'i',2,const char *,path1,const char *,path2)
 int chown(const char *path, uid_t owner, gid_t group);
 ssize_t readlink(const char *path, char *buf, size_t bufsiz);
 int __xstat(int ver, const char * path, struct stat * stat_buf);
-int __xstat64(int ver, const char * path, struct stat64 * stat_buf); */
+int __xstat64(int ver, const char * path, struct stat64 * stat_buf);
+int open(const char *pathname, int flags, mode_t mode);
+int open64(const char *pathname, int flags, mode_t mode);*/
 //case2, mean we need to check a2 and we only need to check one parameter
 //#define FUNC_ARG3(name, ret, CheckNum, arg1, a1, arg2, a2, arg3, a3) 
 
@@ -100,6 +100,8 @@ FUNC_ARG3(chown,   int,    1,const char *,path,uid_t,owner,gid_t,group)
 FUNC_ARG3(readlink,ssize_t,1,const char *,path,char *,buf,size_t,bufsiz)
 FUNC_ARG3(__xstat,  int,   2,int,          ver,const char *,path,struct stat *,stat_buf)
 FUNC_ARG3(__xstat64,int,    2,int,         ver,const char *,path,struct stat *,stat_buf)
+FUNC_ARG3(open,int,1,const char*,pathname,int,flag,mode_t,mode)
+FUNC_ARG3(open64,int,1,const char*,pathname,int,flag,mode_t,mode)
 
 /*arg4
 int openat(int dirfd, const char *pathname, int flags,mode_t mode)

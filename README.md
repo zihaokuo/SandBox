@@ -49,8 +49,6 @@ DIR *opendir(const char *name);
 //arg2
 FILE *fopen(const char *filename, const char *mode)
 FILE *fopen64(const char *filename, const char *mode)
-int open(const char *pathname, int flags);
-int open64(const char *pathname, int flags);
 int creat(const char *path, mode_t mode);
 int creat64(const char *path, mode_t mode);
 int mkdir(const char *   path, mode_t mode);
@@ -64,6 +62,8 @@ int chown(const char *path, uid_t owner, gid_t group);
 ssize_t readlink(const char *path, char *buf, size_t bufsiz);
 int __xstat(int ver, const char * path, struct stat * stat_buf);
 int __xstat64(int ver, const char * path, struct stat64 * stat_buf);
+int open(const char *pathname, int flags);
+int open64(const char *pathname, int flags);
 
 //arg4
 int openat(int dirfd, const char *pathname, int flags,mode_t mode)
